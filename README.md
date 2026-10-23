@@ -111,7 +111,30 @@ The **Shreenathji Diamond Management ERP** solves these operational challenges b
 
 The underlying database consists of **34 normalized relational tables** categorized into **9 operational domains**:
 
-![Database Architecture](docs/images/database_architecture.png)
+```mermaid
+erDiagram
+    BRANCH ||--o{ USER : employs
+    BRANCH ||--o{ LOT : holds
+    BRANCH ||--o{ INVENTORY_MOVEMENT : logs
+    BRANCH ||--o{ SALE : executes
+    BRANCH ||--o{ PURCHASE : procures
+
+    PARTY ||--o{ SALE : buys
+    PARTY ||--o{ PURCHASE : supplies
+    PARTY ||--o{ INVOICE : billed
+    PARTY ||--o{ RECEIVABLE : owes
+    PARTY ||--o{ BROKERAGE_TRANSACTION : brokers
+
+    SALE ||--|| INVOICE : generates
+    SALE ||--|| RECEIVABLE : creates
+    RECEIVABLE ||--o{ PAYMENT : collects
+
+    PRODUCTION_LOT ||--o{ PRODUCTION_ASSORTMENT : yields
+    CHOKI_PROCESSING ||--o{ INVENTORY_MOVEMENT : updates
+
+    FINANCIAL_ACCOUNT ||--o{ JOURNAL_LINE : entries
+    JOURNAL_ENTRY ||--|{ JOURNAL_LINE : contains
+```
 
 ### The 9 Database Domains
 
@@ -124,36 +147,6 @@ The underlying database consists of **34 normalized relational tables** categori
 7. **Sales & Brokerage Domain**: `sales`, `sale_items`, `invoices`, `brokerage_transactions`
 8. **Receivables & Payments Domain**: `receivables`, `payments`
 9. **Financial Accounting Domain**: `financial_accounts`, `journal_entries`, `journal_lines`, `cash_accounts`, `cash_transactions`, `bank_accounts`, `bank_transactions`, `partner_transactions`
-
-### End-to-End Transaction Flow
-
-```
-[Supplier Party]
-       │ (Supplies)
-       ▼
- [Rough Purchase] ──► [Rough Inventory Lot] (Surat Vault)
-                             │
-                             ▼ (Kat Weight Input)
-                     [Production Kapan]
-                             │
-            ┌────────────────┴────────────────┐
-            ▼                                 ▼
-   [Polished Yield]                     [Rejection Stone]
- (Princess Inventory)                (Credited back to Rough)
-            │
-            ▼ (Dispatched to Mumbai BDB)
-      [Sale Contract]
-            │
-      ┌─────┴─────────────────────┐
-      ▼                           ▼
-[Commercial Invoice]     [Dalali Liability] (Broker Commission)
-      │
-      ▼
- [Receivable] (Aging: 30, 60, 90+ days)
-      │
-      ▼ (Customer Payment)
-[Bank / Cash Book] ──► [General Ledger / Trial Balance / Balance Sheet]
-```
 
 ---
 
