@@ -1,7 +1,35 @@
 # Shreenathji Diamond Management ERP
 
 > **Enterprise Diamond Manufacturing, Inventory & Financial Management System**  
-> Operational Blueprint & Architecture Specification for Surat (Manufacturing Hub) and Mumbai (Bharat Diamond Bourse / Trading Hub).
+> Operational Blueprint, Architecture Specification & Interactive React + TypeScript Showcase for Surat (Manufacturing Hub) and Mumbai (Bharat Diamond Bourse / Trading Hub).
+
+[![Next.js 14](https://img.shields.io/badge/Next.js-14.2-black?style=flat&logo=next.js)](https://nextjs.org/)
+[![React 18](https://img.shields.io/badge/React-18.3-blue?style=flat&logo=react)](https://react.dev/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.0-3178C6?style=flat&logo=typescript)](https://www.typescriptlang.org/)
+[![Tailwind CSS](https://img.shields.io/badge/TailwindCSS-3.4-38B2AC?style=flat&logo=tailwind-css)](https://tailwindcss.com/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-emerald?style=flat)](LICENSE)
+
+---
+
+## 🌐 Interactive Product Showcase Website
+
+This repository contains a full **Next.js 14 + TypeScript + Tailwind CSS** overview application designed for prospective diamond clients, factory managers, and traders to explore the system:
+* **Simulated ERP Dashboard**: Multi-branch Surat & Mumbai live telemetry toggle.
+* **Kapan Yield Simulator**: Interactive Kat weight, yield %, Ghat dust loss, and unit economics calculator.
+* **5-Point Rough Reconciliation**: Interactive mass balance validator with worker audit log trails.
+* **Commercial Trade Engine**: Rapaport Less %, Dalali (brokerage), and Vatav settlement calculator.
+* **Database Architecture Viewer**: 34 relational tables across 9 domains with search and field filters.
+* **Gujarati Industry Lexicon**: 13 authentic vernacular diamond trade concepts.
+
+### Quick Start (Local Run)
+```bash
+npm install
+npm run dev
+# Open http://localhost:3000
+```
+
+### Vercel Deployment
+Deployable on Vercel with **Zero Configuration** (Framework Preset: Next.js).
 
 ---
 
