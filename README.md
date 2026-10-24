@@ -3,6 +3,7 @@
 > **Enterprise Diamond Manufacturing, Inventory & Financial Management System**  
 > Operational Blueprint, Architecture Specification & Interactive React + TypeScript Showcase for Surat (Manufacturing Hub) and Mumbai (Bharat Diamond Bourse / Trading Hub).
 
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2FHarshBhayani77%2Fdimond-management-public)
 [![Next.js 14](https://img.shields.io/badge/Next.js-14.2-black?style=flat&logo=next.js)](https://nextjs.org/)
 [![React 18](https://img.shields.io/badge/React-18.3-blue?style=flat&logo=react)](https://react.dev/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.0-3178C6?style=flat&logo=typescript)](https://www.typescriptlang.org/)
